@@ -1,39 +1,35 @@
 <template>
   <div id="app">
     <div id="nav">
-   <navbar></navbar>
+      <navbar></navbar>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
-
 
 <script>
 // @ is an alias to /src
 import navbar from '@/components/Partials/navbar'
 
-
 export default {
- 
   components: {
-  navbar
-  }
+    navbar,
+  },
 }
 </script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 
-
-
 #nav a {
-  font-weight: bold;
-  color: #2c3e50;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 200;
+  font-style: normal;
 }
 
 #nav a.router-link-exact-active {
