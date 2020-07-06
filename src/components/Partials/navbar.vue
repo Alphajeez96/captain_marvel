@@ -1,25 +1,26 @@
 <template>
   <div>
     <header>
-      <section class="container main-div px-0">
+      <section class="contain main-div">
         <nav
           class="navbar justify-content-between navbar-expand-lg navbar-light"
         >
           <a class="navbar-brand a-text flex" href="index.html">
             <!-- First nav here -->
             <ul class="navbar-nav my-2 my-lg-0">
-             <li class='border__right'></li>
+              <li class="border__right"></li>
               <li class="nav-item upper active">
                 <a class="nav-link mx-1" href="#">
                   sign in
                   <span class="sr-only"></span>
                 </a>
-              </li>  <span class="mini__divider">|</span>
-           
+              </li>
+              <span class="mini__divider">|</span>
+
               <li class="nav-item upper active">
                 <a class="nav-link mx-1" href="#">join</a>
               </li>
-                 <li class='border__right'></li>
+              <li class="border__right"></li>
             </ul>
             <!-- First ends here -->
           </a>
@@ -58,26 +59,24 @@
 
             <!-- last nav sits here -->
             <ul class="navbar-nav my-2 my-lg-0">
-             <li class='border__right'></li>
-                <li class="nav-item upper active">
-              
+              <li class="border__right"></li>
+              <li class="nav-item upper active">
                 <a class="nav-link mx-3" href="#">
                   About1
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item upper active">
-              
                 <a class="nav-link mx-3" href="#">
                   About
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
-               <li class='border__right'></li>
+              <li class="border__right"></li>
               <li class="nav-item upper active">
                 <a class="nav-link mx" href="#">Stories</a>
               </li>
-               <li class='border__right'></li>
+              <li class="border__right"></li>
             </ul>
             <!-- last nav ends here -->
           </div>
@@ -86,7 +85,7 @@
     </header>
 
     <!-- Under header here -->
-    <div class='under__div'>
+    <div class="under__div">
       <hr />
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button
@@ -108,33 +107,31 @@
           <ul class="navbar-nav">
             <li class="nav-item mx-2 active">
               <a class="nav-link" href="#">
-               Videos
+                Videos
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item mx-2">
               <a class="nav-link" href="#">characters</a>
             </li>
-              <li class="nav-item mx-2">
+            <li class="nav-item mx-2">
               <a class="nav-link" href="#">comics</a>
             </li>
-              <li class="nav-item mx-2">
+            <li class="nav-item mx-2">
               <a class="nav-link" href="#">movies</a>
             </li>
-              <li class="nav-item mx-2">
+            <li class="nav-item mx-2">
               <a class="nav-link" href="#">tv shows</a>
             </li>
-              <li class="nav-item mx-2">
+            <li class="nav-item mx-2">
               <a class="nav-link" href="#">games</a>
             </li>
-              <li class="nav-item mx-2">
+            <li class="nav-item mx-2">
               <a class="nav-link" href="#">news</a>
             </li>
-              <li class="nav-item mx-2">
+            <li class="nav-item mx-2">
               <a class="nav-link" href="#">more</a>
             </li>
-          
-       
           </ul>
         </div>
       </nav>
@@ -165,15 +162,15 @@ header {
   bottom: 10px;
   text-transform: uppercase;
 }
-.mini__divider{
-    position: relative;
+.mini__divider {
+  position: relative;
   bottom: 2px;
 }
- .border__right{
-     border-right: 1px solid red;
-    height: 12vh;
-    position: relative;
-    bottom: 20px;
+.border__right {
+  border-right: 1px solid rgb(71, 69, 69);
+  height: 12vh;
+  position: relative;
+  bottom: 20px;
 }
 a img {
   position: relative;
@@ -181,19 +178,17 @@ a img {
   bottom: 30px;
 }
 hr {
-  border-bottom: 1px solid red;
-
+  border-bottom: 1px solid rgb(71, 69, 69);
 }
-.under__div{
-    position:relative;
-    bottom: 18px;
-  
+.under__div {
+  position: relative;
+  bottom: 18px;
 }
-.bg-dark{
-    background: #202020 !important;
-     position:relative;
-    bottom: 16px;
-      max-height:40px;
-      text-transform:uppercase
+.bg-dark {
+  background: #202020 !important;
+  position: relative;
+  bottom: 16px;
+  max-height: 40px;
+  text-transform: uppercase;
 }
 </style>

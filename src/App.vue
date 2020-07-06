@@ -23,7 +23,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+bod{
+  
+}
 #nav a {
   color: #fff;
   font-family: 'Poppins', sans-serif;
@@ -34,5 +36,8 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+.contain{
+  padding: 0px 95px 0px 95px
 }
 </style>
