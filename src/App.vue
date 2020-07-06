@@ -23,9 +23,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-bod{
-  
-}
+
 #nav a {
   color: #fff;
   font-family: 'Poppins', sans-serif;

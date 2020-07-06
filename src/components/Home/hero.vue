@@ -17,9 +17,6 @@
           </div>
           <div class="col-md-6 col-lg-6 col-sm-12"></div>
         </div>
-        <div class="btn-div">
-          <button class="btn mt-3 px-4 pt-2 pb-2">Book Us Now</button>
-        </div>
       </div>
     </section>
   </div>
