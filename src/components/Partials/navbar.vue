@@ -10,14 +10,14 @@
             <ul class="navbar-nav my-2 my-lg-0">
              <li class='border__right'></li>
               <li class="nav-item upper active">
-                <a class="nav-link mx-3" href="#">
-                  About
-                  <span class="sr-only">(current)</span>
+                <a class="nav-link mx-1" href="#">
+                  sign in
+                  <span class="sr-only"></span>
                 </a>
-              </li>
+              </li>  <span class="mini__divider">|</span>
            
               <li class="nav-item upper active">
-                <a class="nav-link mx-3" href="#">Stories</a>
+                <a class="nav-link mx-1" href="#">join</a>
               </li>
                  <li class='border__right'></li>
             </ul>
@@ -165,6 +165,10 @@ header {
   bottom: 10px;
   text-transform: uppercase;
 }
+.mini__divider{
+    position: relative;
+  bottom: 2px;
+}
  .border__right{
      border-right: 1px solid red;
     height: 12vh;
@@ -173,7 +177,7 @@ header {
 }
 a img {
   position: relative;
-  left: 80px;
+  left: 100px;
   bottom: 30px;
 }
 hr {
