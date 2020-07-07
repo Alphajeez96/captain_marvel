@@ -3,10 +3,17 @@ import App from './App.vue'
 import router from './router'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import VueAxios from 'vue-axios'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
-// Vue.use(VueAxios, axios)
 
+
+const base = axios.create({
+    baseURL: "https://gateway.marvel.com/v1/public"
+});
+
+Vue.prototype.$http = base;
+Vue.use(VueAxios, axios, )
 Vue.config.productionTip = false
 
 new Vue({
