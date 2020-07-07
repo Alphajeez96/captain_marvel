@@ -3,9 +3,9 @@
     <div class="contain">
       <h2>Latest news</h2>
       <div class="card mb-3" v-for="event in events" :key="event.id">
-        <img src="event.thumbnail.path + .jpg" class="card-img-top" alt="..." />
+        <img :src="`${event.thumbnail.path}.${event.thumbnail.extension}`" class="card-img-top" alt="..." />
         <div class="card-body">
-          <h5 class="card-title">{{ event.thumbnail.path }}</h5>
+          <h5 class="card-title">{{ event.title }}</h5>
           <p class="card-text">
          {{ event.description}}
           </p>
@@ -27,6 +27,7 @@ export default {
     return {
  apikey: "92edde42a0b45fe3b6b228a3edf4855b",
       events: [],
+      img:'https://pixabay.com/photos/landscape-storm-sleeve-navy-clouds-5363681/'
 
     }
   },
@@ -58,6 +59,10 @@ console.log( response.data.data.results)
 .latest {
   background: #151515;
   position: relative;
+}
+img{
+  width: 10px;
+  height: 10px;
 }
 .contain > h2 {
   text-transform: uppercase;
