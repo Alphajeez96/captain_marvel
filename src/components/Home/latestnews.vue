@@ -2,13 +2,12 @@
   <div class="latest">
     <div class="contain">
       <h2>Latest news</h2>
-      <div class="card mb-3">
-        <img src="" class="card-img-top" alt="..." />
+      <div class="card mb-3" v-for="event in events" :key="event.id">
+        <img src="event.thumbnail.path + .jpg" class="card-img-top" alt="..." />
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
+          <h5 class="card-title">{{ event.thumbnail.path }}</h5>
           <p class="card-text">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
+         {{ event.description}}
           </p>
           <p class="card-text">
             <small class="text-muted">Last updated 3 mins ago</small>
@@ -27,7 +26,8 @@ export default {
   data() {
     return {
  apikey: "92edde42a0b45fe3b6b228a3edf4855b",
-      news: null,
+      events: [],
+
     }
   },
     mounted(){
@@ -40,8 +40,12 @@ let response = await this.$http.get(
    `https://gateway.marvel.com/v1/public/events?apikey=${this.apikey}`,
    
 );
-let news = response.data;
-console.log(news)
+this.events = response.data.data.results;
+// console.log( response.data.data.results)
+
+console.log( response.data.data.results)
+
+
     }
     catch(error){
       console.log(error.response)
