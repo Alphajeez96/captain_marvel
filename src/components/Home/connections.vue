@@ -1,27 +1,31 @@
 <template>
     <div>
-       <div class="contain">
-      <h2>Latest news</h2>
+       <div class="contain connections">
+      <h2>Connections</h2>
       <div class="row">
-        <div
-          class="image__div col-md-3 col-lg-3"
-          v-for="event in displayedPosts"
-          :key="event.id"
-        >
-          <img
-            :src="`${event.thumbnail.path}.${event.thumbnail.extension}`"
-            class="card-img-top img-fluid"
-            alt="`${event.title}`"
-          />
-          <h5>{{ event.title }}</h5>
-          <p>
-            <v-clamp autoresize :max-lines="3">{{ event.description }}</v-clamp>
-          </p>
-          <!-- <a :href="`${event.urls}`" class="btn btn-primary">
-            Read More
-          </a> -->
+ <div class="bs-example">
+    <div class="card" style="max-width: 500px;">
+        <div class="row no-gutters">
+            <div class="col-sm-5" style="background: #868e96;">
+                <img src="https://cdn.pixabay.com/photo/2020/07/02/17/29/landscape-5363681_960_720.jpg" class="card-img-top h-100" alt="...">
+            </div>
+            <div class="col-sm-7">
+                <div class="card-body">
+                    <h5 class="card-title">Alice Liddel</h5>
+                    <p class="card-text">Alice is a freelance web designer and developer based in London. She is specialized in HTML5, CSS3, JavaScript, Bootstrap, etc.</p>
+                    <a href="#" class="btn btn-primary stretched-link">View Profile</a>
+                </div>
+            </div>
         </div>
+    </div>
+</div>
       </div>
     </div>
     </div>
 </template>
+
+<style scoped>
+  .bs-example{
+        margin: 20px;        
+    }
+</style>
