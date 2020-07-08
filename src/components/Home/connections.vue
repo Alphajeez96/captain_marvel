@@ -1,37 +1,33 @@
 <template>
-    <div>
-       <div class="contain connections">
-      <h2>Connections</h2>
+  <div class="latest" role="main" id="pagination-app">
+    <div class="contain">
+      <h2>Latest news</h2>
       <div class="row">
- <div class="bs-example">
-    <div class="card" style="max-width: 500px;">
-        <div class="row no-gutters">
-        <div >
-            <div class="col-sm-5"  style="background: #868e96;">
-                <img src="https://cdn.pixabay.com/photo/2020/07/02/17/29/landscape-5363681_960_720.jpg" class="card-img-top h-100" alt="...">
-            </div>
-            <div class="col-sm-7">
-                <div class="card-body">
-                    <h5 class="card-title">Alice Liddel</h5>
-                    <p class="card-text">Alice is a freelance web designer and developer based in London. She is specialized in HTML5, CSS3, JavaScript, Bootstrap, etc.</p>
-                    <a href="#" class="btn btn-primary stretched-link">View Profile</a>
-                </div>
-            </div>
+        <div
+          class="image__div col-md-3 col-lg-3"
+          v-for="creator in creators"
+          :key="creator.id"
+        >
+          <img
+            :src="`${creator.thumbnail.path}.${creator.thumbnail.extension}`"
+            class="card-img-top img-fluid"
+            alt="`${character.title}`"
+          />
+          <h5>{{ creator.fullName }}</h5>
+          <p>
+            <v-clamp autoresize :max-lines="3">{{ creator.modified }}</v-clamp>
+          </p>
+          <!-- <a :href="`${event.urls}`" class="btn btn-primary">
+            Read More
+          </a> -->
         </div>
-        </div>
-    </div>
-</div>
       </div>
     </div>
-    </div>
+
+   
+
+  </div>
 </template>
-
-
-<style scoped>
-  .bs-example{
-        margin: 20px;        
-    }
-</style>
 
 <script>
 const axios = require('axios')
@@ -45,8 +41,9 @@ export default {
   data() {
     return {
       apikey: '92edde42a0b45fe3b6b228a3edf4855b',
-      characters: [],
-     
+      creators: [],
+      comicid:1749
+    
     }
   },
   mounted() {
@@ -57,18 +54,68 @@ export default {
     async getCharacters() {
       try {
         let response = await this.$http.get(
-          `https://gateway.marvel.com/v1/public/characters?apikey=${this.apikey}`,
+          `https://gateway.marvel.com/v1/public/comics/${this.comicid}/characters?apikey=${this.apikey}`,
         )
-        this.characters = response.data.data.results
-        // console.log( response.data.data.results)
+        this.creators = response.data.data.results
+        console.log( response.data.data.results)
         // this.url = response.data
-        console.log(response.data.data.results)
+        // console.log(response.data.data.results)
       } catch (error) {
         console.log(error.response)
       }
     },
 
   },
-
+ 
 }
 </script>
+<style scoped>
+.latest {
+  background: #151515;
+  position: relative;
+  bottom: 170px;
+}
+
+.contain > h2 {
+  text-transform: uppercase;
+  padding: 50px 0px 50px 0px;
+  color: white;
+}
+
+.image__div {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.image__div img {
+  width: inherit;
+}
+.image__div h5 {
+  color: #999;
+  padding-top: 10px;
+}
+.image__div p {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.image__div p :hover {
+  color: red;
+}
+.pagination {
+  color: white;
+}
+.page-item {
+  color: white;
+}
+
+.clearfix button {
+  color: white;
+  font-weight: bold;
+}
+
+.clearfix button .btn :active {
+  color: red;
+}
+</style>
