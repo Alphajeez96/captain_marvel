@@ -11,7 +11,7 @@
           <img
             :src="`${event.thumbnail.path}.${event.thumbnail.extension}`"
             class="card-img-top img-fluid"
-            alt="..."
+            alt="`${event.title}`"
           />
           <h5>{{ event.title }}</h5>
           <p>
@@ -76,10 +76,10 @@ export default {
   mounted() {
     this.getEvents()
   },
-    watch: {
-    events () {
-      this.setPages();
-    }
+  watch: {
+    events() {
+      this.setPages()
+    },
   },
   methods: {
     async getEvents() {
@@ -89,31 +89,31 @@ export default {
         )
         this.events = response.data.data.results
         // console.log( response.data.data.results)
-        this.url = response.data
-        console.log(response.data.data.results)
+        // this.url = response.data
+        // console.log(response.data.data.results)
       } catch (error) {
         console.log(error.response)
       }
     },
 
-      setPages () {
-      let numberOfPages = Math.ceil(this.events.length / this.perPage);
+    setPages() {
+      let numberOfPages = Math.ceil(this.events.length / this.perPage)
       for (let index = 1; index <= numberOfPages; index++) {
-        this.pages.push(index);
+        this.pages.push(index)
       }
-    },  
-       paginate (events) {
-      let page = this.page;
-      let perPage = this.perPage;
-      let from = (page * perPage) - perPage;
-      let to = (page * perPage);
-      return  events.slice(from, to);
+    },
+    paginate(events) {
+      let page = this.page
+      let perPage = this.perPage
+      let from = page * perPage - perPage
+      let to = page * perPage
+      return events.slice(from, to)
     },
   },
   computed: {
-    displayedPosts () {
-      return this.paginate(this.events);
-    }
+    displayedPosts() {
+      return this.paginate(this.events)
+    },
   },
 }
 </script>
@@ -158,13 +158,12 @@ export default {
   color: white;
 }
 
-.clearfix button{
- color:white;
-font-weight:bold
+.clearfix button {
+  color: white;
+  font-weight: bold;
 }
 
-
-.clearfix button .btn :active{
-  color:red
+.clearfix button .btn :active {
+  color: red;
 }
 </style>
