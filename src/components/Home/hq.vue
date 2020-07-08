@@ -6,6 +6,9 @@
     <div class='col-md-6 col-lg-6'>
     <img src='../../assets/marvelhq-promos-modules-featured-half-dsk-01.jpg'>
     </div>
+       <div class='col-md-6 col-lg-6'>
+    <img src='../../assets/marvelhq-promos-modules-featured-half-dsk-01.jpg'>
+    </div>
     </div>
     </div>
     </div>
