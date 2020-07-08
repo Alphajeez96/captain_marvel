@@ -6,7 +6,8 @@
  <div class="bs-example">
     <div class="card" style="max-width: 500px;">
         <div class="row no-gutters">
-            <div class="col-sm-5" style="background: #868e96;">
+        <div >
+            <div class="col-sm-5"  style="background: #868e96;">
                 <img src="https://cdn.pixabay.com/photo/2020/07/02/17/29/landscape-5363681_960_720.jpg" class="card-img-top h-100" alt="...">
             </div>
             <div class="col-sm-7">
@@ -16,6 +17,7 @@
                     <a href="#" class="btn btn-primary stretched-link">View Profile</a>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </div>
@@ -48,7 +50,7 @@ export default {
     }
   },
   mounted() {
-    this.getEvents()
+    this.getCharacters()
   },
  
   methods: {
@@ -60,7 +62,7 @@ export default {
         this.characters = response.data.data.results
         // console.log( response.data.data.results)
         // this.url = response.data
-        // console.log(response.data.data.results)
+        console.log(response.data.data.results)
       } catch (error) {
         console.log(error.response)
       }
