@@ -3,7 +3,7 @@
     <header>
       <section class="contain main-div">
         <nav
-          class="navbar navbar-expand-lg navbar-light"
+          class="navbar  navbar-expand-lg navbar-light"
         >
           <a class="navbar-brand a-text flex" href="index.html">
             <!-- First nav here -->

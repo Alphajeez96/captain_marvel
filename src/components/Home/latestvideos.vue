@@ -57,7 +57,7 @@ export default {
     async getSeries() {
       try {
         let response = await this.$http.get(
-          `https://gateway.marvel.com/v1/public/creators?apikey=${this.apikey}`,
+          `https://gateway.marvel.com/v1/public/series?apikey=${this.apikey}`,
         )
         this.series = response.data.data.results
         console.log(response.data.data.results)
