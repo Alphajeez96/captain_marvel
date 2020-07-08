@@ -24,8 +24,70 @@
     </div>
 </template>
 
+
 <style scoped>
   .bs-example{
         margin: 20px;        
     }
 </style>
+
+<script>
+const axios = require('axios')
+import VClamp from 'vue-clamp'
+
+export default {
+  name: 'latestnews',
+  components: {
+    VClamp,
+  },
+  data() {
+    return {
+      apikey: '92edde42a0b45fe3b6b228a3edf4855b',
+      characters: [],
+     
+    }
+  },
+  mounted() {
+    this.getEvents()
+  },
+  watch: {
+    events() {
+      this.getCharacters()
+    },
+  },
+  methods: {
+    async getCharacters() {
+      try {
+        let response = await this.$http.get(
+          `https://gateway.marvel.com/v1/public/characters?apikey=${this.apikey}`,
+        )
+        this.characters = response.data.data.results
+        // console.log( response.data.data.results)
+        // this.url = response.data
+        // console.log(response.data.data.results)
+      } catch (error) {
+        console.log(error.response)
+      }
+    },
+
+    setPages() {
+      let numberOfPages = Math.ceil(this.events.length / this.perPage)
+      for (let index = 1; index <= numberOfPages; index++) {
+        this.pages.push(index)
+      }
+    },
+    paginate(events) {
+      let page = this.page
+      let perPage = this.perPage
+      let from = page * perPage - perPage
+      let to = page * perPage
+      return events.slice(from, to)
+    },
+  },
+  computed: {
+    displayedPosts() {
+      return this.paginate(this.events)
+    },
+  },
+}
+</script>
